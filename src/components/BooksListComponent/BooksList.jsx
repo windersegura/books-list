@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { BookCard } from "../BookCard/BookCard";
 
-import './bookslist.css'
+import "./bookslist.css";
 
 export function BooksList(props) {
   const { content } = props;
@@ -12,12 +12,12 @@ export function BooksList(props) {
         <h3>Lista de Libros</h3>
       </div>
 
-      <div>
-        <ul>
-          {content.library.map((b, i) => (
-            <li key={i}>{<BookCard book={b.book}/>}</li>
-          ))}
-        </ul>
+      <div className="list-items">
+        {content.library.map((b, i) => (
+          <div key={i}>
+            {<BookCard book={b.book} />}
+          </div>
+        ))}
       </div>
     </div>
   );
